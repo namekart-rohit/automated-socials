@@ -1,6 +1,6 @@
 import puppeteer from "puppeteer";
-import { SOCIAL_PLATFORMS } from "../constants/socials";
-import { MediaResult } from "../types/socials.t";
+import { SOCIAL_PLATFORMS } from "../../constants/socials";
+import { MediaResult } from "../../types/socials.t";
 
 const getFirstLink = async (query: string, platform: string) => {
   const browser = await puppeteer.launch({ headless: true });
@@ -52,7 +52,7 @@ const getSocialMediaResults = async (query: string): Promise<MediaResult> => {
     });
 
     await Promise.all(searches);
-    return results;
+    return sanitizeSocialMediaResults(results);
   } catch (error) {
     console.error("Error in social media search:", error);
     throw error;
