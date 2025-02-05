@@ -40,7 +40,7 @@ const getSocialMediaResults = async (query: string): Promise<MediaResult> => {
       linkedin: null,
       facebook: null,
       instagram: null,
-      twitter: null,
+      x: null,
     };
 
     const searches = SOCIAL_PLATFORMS.map(async (platform) => {
@@ -82,10 +82,10 @@ const sanitizeSocialMediaResults = (results: MediaResult) => {
   }
 
   // Twitter
-  if (results.twitter && results.twitter.includes("twitter.com/")) {
-    results.twitter = results.twitter.split("/").splice(0, 4).join("/");
+  if (results.x && results.x.includes("x.com/")) {
+    results.x = results.x.split("/").splice(0, 4).join("/");
   } else {
-    results.twitter = null;
+    results.x = null;
   }
 
   return results;

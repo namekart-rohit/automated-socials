@@ -2,7 +2,7 @@ type MediaResult = {
   linkedin: string | null;
   facebook: string | null;
   instagram: string | null;
-  twitter: string | null;
+  x: string | null;
 };
 
 type LeadSocialsDetails = {
@@ -22,7 +22,7 @@ type LeadSocialsDetails = {
     likes: number | null;
     followers: number | null;
   } | null;
-  twitter: {
+  x: {
     profileUrl: string;
     followings: number | null;
     followers: number | null;

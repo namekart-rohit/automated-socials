@@ -9,6 +9,7 @@ interface ProfileStats {
 async function fetchTwitterProfileStats(
   profileUrl: string
 ): Promise<ProfileStats> {
+  profileUrl;
   const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
 

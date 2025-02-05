@@ -16,14 +16,14 @@ export const getLeadSocials = asyncHandler(
       linkedin: socialMediaResults.linkedin,
       facebook: socialMediaResults.facebook,
       instagram: socialMediaResults.instagram,
-      twitter: socialMediaResults.twitter,
+      x: socialMediaResults.x,
     };
 
     const finalSocialDetails: LeadSocialsDetails = {
       linkedin: null,
       facebook: null,
       instagram: null,
-      twitter: null,
+      x: null,
     };
 
     // Facebook
@@ -58,10 +58,10 @@ export const getLeadSocials = asyncHandler(
     }
 
     // Twitter
-    if (leadSocials.twitter) {
-      const twitterData = await getTwitterData(leadSocials.twitter);
-      finalSocialDetails.twitter = {
-        profileUrl: leadSocials.twitter,
+    if (leadSocials.x) {
+      const twitterData = await getTwitterData(leadSocials.x);
+      finalSocialDetails.x = {
+        profileUrl: leadSocials.x,
         followings: twitterData?.following ?? null,
         followers: twitterData?.followers ?? null,
       };
